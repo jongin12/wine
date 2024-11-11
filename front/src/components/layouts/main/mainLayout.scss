@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+header {
+  height: 90px;
+}
+
+#mainDiv {
+  height: calc(100vh - 90px);
+  overflow-x: scroll;
+}
