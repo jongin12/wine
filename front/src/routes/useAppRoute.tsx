@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../components/layouts/main/mainLayout";
 import Home from "../screens/home/home";
+import NotFound from "../components/layouts/error/notFound";
 
 interface hookMember {
   router: any;
@@ -8,8 +9,10 @@ interface hookMember {
 
 const useAppRoute = (): hookMember => {
   const routes = {
+    "/": [{ path: "", element: <div>home</div> }],
     "/a": [{ path: "/home", element: <Home /> }],
     "/b": [{ path: "/home", element: <div>adsfsa</div> }],
+    "/*": [{ path: "", element: <NotFound /> }],
   };
 
   const router = createBrowserRouter(
