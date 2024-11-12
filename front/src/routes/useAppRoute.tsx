@@ -9,9 +9,9 @@ interface hookMember {
 
 const useAppRoute = (): hookMember => {
   const routes = {
-    "/": [{ path: "", element: <div>home</div> }],
-    "/a": [{ path: "/home", element: <Home /> }],
-    "/b": [{ path: "/home", element: <div>adsfsa</div> }],
+    "/": [{ path: "", element: <Home /> }],
+    "/a": [{ path: "/home", element: <div>a/home</div> }],
+    "/b": [{ path: "/home", element: <div>b/home</div> }],
     "/*": [{ path: "", element: <NotFound /> }],
   };
 
