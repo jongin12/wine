@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const get = async () => {
+const get = async (url: string) => {
   try {
-    const response = await axios.get(`${process.env.MY_URL}/auth/profile`, {});
+    const response = await axios.get(`${process.env.REACT_APP_URL}${url}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching profile:", error);
@@ -10,9 +10,12 @@ const get = async () => {
   }
 };
 
-const post = async () => {
+const post = async (url: string, data: any = {}) => {
   try {
-    const response = await axios.post(`${process.env.MY_URL}/auth/profile`, {});
+    const response = await axios.post(
+      `${process.env.REACT_APP_URL}${url}`,
+      data
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching profile:", error);
